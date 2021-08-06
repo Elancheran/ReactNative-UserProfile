@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Text, View, Image, StyleSheet} from 'react-native';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import { Store } from './Redux/Store';
 
 import LoginScreen from './ScreenComponents/LoginScreen';
@@ -20,13 +20,13 @@ function TabContainer() {
     <Tabs.Navigator>
       <Tabs.Screen name="User" component={HomeScreen} options={{ title: 'Users'}} />
       <Tabs.Screen name="Profile" component={ProfileScreen} options={{ title: 'My profile'}} />
-      <Tabs.Screen name="FavouriteUser" component={favContainer} options={{ title: 'Favourite Users'}}/>
+      <Tabs.Screen name="FavouriteUser" component={FavouriteScreen} options={{ title: 'Favourite Users'}}/>
     </Tabs.Navigator>
   );
 }
 
 
-let favContainer = connect(state => ({ count: state.users }))(FavouriteScreen);
+// let favContainer = connect(state => ({ count: state.users }))(FavouriteScreen);
 
 const AppContainer = () => {
   return (

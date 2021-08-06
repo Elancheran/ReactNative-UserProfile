@@ -13,7 +13,9 @@ function userReducer(state = initialState, action) {
         case SET_USER_EMAIL:
             return { ...state, email: action.payload };
         case SET_LIKED_USERS:
-            return { ...state, user: action.payload };
+            console.log('user:', state.users)
+            console.log('payload:', action.payload)
+            return { ...state, users: [...state.users, action.payload] };
         default:
             return state;
     }

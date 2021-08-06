@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Button, View, Text, StyleSheet, Image, TextInput, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import { setLikedUsers } from '../Redux/Actions'
-
  
 export default function UserItem({ user }) {
-    const { userItem } = useSelector( state => state.userReducer);
+    // const { userItem } = useSelector( state => state.userReducer);
     const dispatch = useDispatch();
     return (
       <View style={styles.listItem}>
@@ -43,3 +42,9 @@ const styles = StyleSheet.create({
       fontWeight: '900'
     }
   });
+
+  // const mapStateToProps = state  => ({
+  //   user: state.user
+  // }) 
+  
+  // export default connect(mapStateToProps)(UserItem)
